@@ -1,0 +1,23 @@
+{
+  "name": "210521-d3-wp-ts-bbl_take2",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack --config build-utils/webpack.config.js",
+    "wds": "webpack serve --open --config build-utils/webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/d3-fetch": "^2.0.0",
+    "copy-webpack-plugin": "^8.1.1",
+    "csv-loader": "^3.0.3",
+    "d3-fetch": "^2.0.0",
+    "html-webpack-plugin": "^5.3.1",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
