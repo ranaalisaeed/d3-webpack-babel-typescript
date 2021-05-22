@@ -12,7 +12,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
 	context: paths.src,
-  entry: './index.js',
+  entry: './index',
   output: {
     path: paths.dist,
     filename: 'bundle.js',
@@ -34,12 +34,16 @@ module.exports = {
   devServer: {
   	contentBase: paths.dist,
   },
-  // module: {
-  // 	rules: [
-  // 		{
-  // 			test: /\.(csv|tsv)$/i,
-  // 			use: ['csv-loader'],
-  // 		},
-  // 	]
-  // }
+  module: {
+  	rules: [
+  		{
+  			test: /\.(ts|js)x?$/,
+  			use: ['babel-loader'],
+				exclude: /node_modules/,
+  		},
+  	]
+  },
+	resolve: {
+		extensions: ['.ts', '.tsx', '.js', '.json']
+	}
 }
