@@ -1,4 +1,4 @@
-import * as d3Fetch from 'd3-fetch'
+import { csv } from 'd3-fetch'
 
 console.log('success from index.js')
 
@@ -12,6 +12,6 @@ function component() {
 document.body.appendChild(component())
 
 
-d3Fetch.csv('/data/output.csv').then(function(data) { 
+csv('/data/output.csv').then(function(data) { 
 	console.log('csv', data)
 })
