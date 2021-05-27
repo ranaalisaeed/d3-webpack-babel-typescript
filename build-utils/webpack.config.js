@@ -12,7 +12,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
 	context: paths.src,
-  entry: './index',
+  entry: './deventry',
   output: {
     path: paths.dist,
     filename: 'bundle.js',
