@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
     "build": "webpack --config build-utils/webpack.config.js",
     "wds": "webpack serve --open --config build-utils/webpack.config.js",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "build:types": "tsc --emitDeclarationOnly"
+    "build:types": "tsc --emitDeclarationOnly",
+    "test": "jest",
+		"test:coverage": "jest --coverage"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +30,8 @@
     "@types/d3-selection": "^2.0.0",
     "@types/d3-shape": "^2.1.0",
     "@types/d3-transition": "^2.0.0",
+    "@types/jest": "^26.0.23",
+    "babel-jest": "^27.0.1",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^8.1.1",
     "csv-loader": "^3.0.3",
@@ -43,6 +46,7 @@
     "d3-shape": "^2.1.0",
     "d3-transition": "^2.0.0",
     "html-webpack-plugin": "^5.3.1",
+    "jest": "^27.0.1",
     "typescript": "^4.2.4",
     "webpack": "^5.37.1",
     "webpack-cli": "^4.7.0",
