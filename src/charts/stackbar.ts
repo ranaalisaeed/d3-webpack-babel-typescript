@@ -107,16 +107,16 @@ export default function stackbar(): any {
 	}
 
 
-	function getCategories(data: StackbarDatum[]): string[] {
-		return Array.from(new Set(data
-			.map(d => Object.keys(d))
-			.reduce((acc, val) => acc.concat(val), []) // alternative .flat()
-		)).slice(1)
-	}
+	// function getCategories(data: StackbarDatum[]): string[] {
+	// 	return Array.from(new Set(data
+	// 		.map(d => Object.keys(d))
+	// 		.reduce((acc, val) => acc.concat(val), []) // alternative .flat()
+	// 	)).slice(1)
+	// }
 
 
 	function getMaxValue(data: StackbarDatum[]): number {
-		let categories = getCategories(data)
+		let categories = _.getCategories(data)
 
 		const transformedData: number[] = data.map(d => {
 			return max([ sum( 
@@ -131,7 +131,7 @@ export default function stackbar(): any {
 	 * @param data StackbarDatum[]
 	 */
 	function buildScales(data: StackbarDatum[]): void {
-		let categories = getCategories(data)
+		let categories = _.getCategories(data)
 		let computedMaxValue = getMaxValue(data)
 
 		xScMkr = scaleBand()
@@ -196,7 +196,7 @@ export default function stackbar(): any {
 	 * @param data 
 	 */
 	function buildLayout(data: StackbarDatum[]): void {
-		let categories = getCategories(data)
+		let categories = _.getCategories(data)
 
 		let stackMkr = stack<StackbarDatum[]>()
 			.keys(categories)
@@ -345,7 +345,7 @@ export default function stackbar(): any {
 		let legendGroup: any = svg.select('.legend-group')
 
 		let existingElems = legendGroup.selectAll('.key-group')
-			.data(getCategories(data), (d: any) => d)
+			.data(_.getCategories(data), (d: any) => d)
 
 		let appendedElems = existingElems
 			.enter().append('g')
@@ -403,6 +403,13 @@ export default function stackbar(): any {
 
     return this
   }
+
+	_.getCategories = function(data: StackbarDatum[]): string[] {
+		return Array.from(new Set(data
+			.map(d => Object.keys(d))
+			.reduce((acc, val) => acc.concat(val), []) // alternative .flat()
+		)).slice(1)
+	}
 
 
 	return _

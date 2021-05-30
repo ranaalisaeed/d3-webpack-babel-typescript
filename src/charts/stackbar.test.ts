@@ -403,7 +403,7 @@ describe('Stackbar Chart', () => {
 		})
 
 		test('should provide maxValue getter and setter', () => {
-			const sample_categories = stackbarChart.categories()
+			const sample_categories = stackbarChart.getCategories(sample_data)
 			const data_maxVal = max(
 				sample_data.map(d => max(
 					[sum(sample_categories.map(k => d[k]))]	
