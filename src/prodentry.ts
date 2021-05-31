@@ -1,0 +1,1 @@
+export {default as stackbar} from './charts/stackbar'

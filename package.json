@@ -1,10 +1,11 @@
 {
-  "name": "210521-d3-wp-ts-bbl_take2",
+  "name": "vizcharts",
   "version": "1.0.0",
-  "description": "",
+  "description": "Reusable D3 charting library written with passion for clean code",
+	"main": "dist/vizCharts.min.js",
   "scripts": {
-    "watch": "webpack --watch",
-    "build": "webpack --config build-utils/webpack.config.js",
+    "build": "webpack --config build-utils/webpack.prod.js",
+    "build:watch": "webpack --watch --config build-utils/webpack.prod.js",
     "wds": "webpack serve --config build-utils/webpack.config.js",
 		"demo": "webpack serve --config build-utils/webpack.demo.js",
     "type-check": "tsc --noEmit",
