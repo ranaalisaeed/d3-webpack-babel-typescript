@@ -20,7 +20,7 @@ module.exports = {
   },
   plugins: [
   	new HtmlWebpackPlugin({
-  		title: 'My App'
+  		title: 'App Development',
   	}),
   	new CopyWebpackPlugin({
   		patterns: [
@@ -33,6 +33,8 @@ module.exports = {
   ],
   devServer: {
   	contentBase: paths.dist,
+		port: 8001,
+		open: true,
   },
   module: {
   	rules: [

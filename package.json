@@ -5,7 +5,8 @@
   "scripts": {
     "watch": "webpack --watch",
     "build": "webpack --config build-utils/webpack.config.js",
-    "wds": "webpack serve --open --config build-utils/webpack.config.js",
+    "wds": "webpack serve --config build-utils/webpack.config.js",
+		"demo": "webpack serve --config build-utils/webpack.demo.js",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "build:types": "tsc --emitDeclarationOnly",
