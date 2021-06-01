@@ -17,9 +17,10 @@ module.exports = {
     filename: '[name].min.js',
     clean: true,
 		library: {
-			name: 'vizChartLibrary',
+			name: 'vizintel-charts',
 			type: 'umd',
 		},
+		globalObject: 'this',
   },
 	externals: {
 		commonjs: 'd3',

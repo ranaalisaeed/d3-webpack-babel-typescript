@@ -1,18 +1,18 @@
 {
-  "name": "vizcharts",
-  "version": "1.0.0",
-  "description": "Reusable D3 charting library written with passion for clean code",
-	"main": "dist/vizCharts.min.js",
+  "name": "vizintel-charts",
+  "version": "0.0.4",
+  "description": "Reusable D3 charting library written with extra care to clean minimalistic code",
+  "main": "dist/vizCharts.min.js",
   "scripts": {
     "build": "webpack --config build-utils/webpack.prod.js",
     "build:watch": "webpack --watch --config build-utils/webpack.prod.js",
     "wds": "webpack serve --config build-utils/webpack.config.js",
-		"demo": "webpack serve --config build-utils/webpack.demo.js",
+    "demo": "webpack serve --config build-utils/webpack.demo.js",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "build:types": "tsc --emitDeclarationOnly",
+		"build:types": "tsc --emitDeclarationOnly",
     "test": "jest",
-		"test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage"
   },
   "author": "",
   "license": "ISC",
