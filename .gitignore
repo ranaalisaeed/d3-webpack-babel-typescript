@@ -1,3 +1,8 @@
+# My specific
+dist
+projectplan.md
+garbage
+
 # Logs
 logs
 *.log
@@ -34,13 +39,3 @@ node_modules
 
 # OSX
 .DS_Store
-
-# Demos
-demos/build
-dist
-
-# Docs
-docs
-
-projectplan.md
-garbage
