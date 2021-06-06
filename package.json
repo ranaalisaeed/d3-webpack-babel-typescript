@@ -1,18 +1,25 @@
 {
   "name": "vizintel-charts",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Reusable D3 charting library written with extra care to clean minimalistic code",
-  "main": "dist/vizCharts.min.js",
+  "main": "./dist/lib/cjs/index.js",
+  "module": "./dist/lib/esm/index.js",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "webpack --config build-utils/webpack.prod.js",
+    "build:combo": "webpack --config build-utils/webpack.prod.js && npm run build:types",
     "build:watch": "webpack --watch --config build-utils/webpack.prod.js",
     "wds": "webpack serve --config build-utils/webpack.config.js",
     "demo": "webpack serve --config build-utils/webpack.demo.js",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-		"build:types": "tsc --emitDeclarationOnly",
+    "build:types": "tsc --emitDeclarationOnly",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "v2:clean": "shx rm -rf dist",
+    "v2:build": "npm run v2:clean && tsc && tsc -m es6 --outDir dist/lib/esm && webpack --config build-utils/webpack.prod.js"
   },
   "author": "",
   "license": "ISC",
@@ -37,6 +44,15 @@
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^8.1.1",
     "csv-loader": "^3.0.3",
+    "html-webpack-plugin": "^5.3.1",
+    "jest": "^27.0.1",
+    "shx": "^0.3.3",
+    "typescript": "^4.2.4",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "peerDependencies": {
     "d3-array": "^2.12.1",
     "d3-axis": "^2.1.0",
     "d3-color": "^2.0.0",
@@ -46,12 +62,6 @@
     "d3-scale-chromatic": "^2.0.0",
     "d3-selection": "^2.0.0",
     "d3-shape": "^2.1.0",
-    "d3-transition": "^2.0.0",
-    "html-webpack-plugin": "^5.3.1",
-    "jest": "^27.0.1",
-    "typescript": "^4.2.4",
-    "webpack": "^5.37.1",
-    "webpack-cli": "^4.7.0",
-    "webpack-dev-server": "^3.11.2"
+    "d3-transition": "^2.0.0"
   }
 }

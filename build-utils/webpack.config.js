@@ -12,7 +12,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
 	context: paths.src,
-  entry: './deventry',
+  entry: './index.dev',
   output: {
     path: paths.dist,
     filename: 'bundle.js',
@@ -24,9 +24,9 @@ module.exports = {
   	}),
   	new CopyWebpackPlugin({
   		patterns: [
-        { 
+        {
 	        from: paths.data,
-	        to: paths.dist + '/data/' // 2 forward slashes are important        	
+	        to: paths.dist + '/data/' // 2 forward slashes are important
         },
       ],
   	})

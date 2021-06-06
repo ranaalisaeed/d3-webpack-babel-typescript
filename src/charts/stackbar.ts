@@ -299,7 +299,7 @@ export default function stackbar(): any {
 				// tooltip.style('display', 'none')
 				tooltip.style('opacity', 0)
 			})
-			.on('mousemove', (event, d) => {
+			.on('mousemove', (event, d:any) => {
 				[mouseX, mouseY] = pointer(event, svg)
 
 				tooltip
@@ -320,22 +320,22 @@ export default function stackbar(): any {
 			// })
 	}
 
-	function handleMouseOver(event: Event, d: StackbarDatum) {
+	function handleMouseOver(this:any, event: Event, d: StackbarDatum) {
 		dispatcher.call('customMouseOver', event, d, 
 			{source: 'vizintel', d: d, event: event, evtCurrTgt: event.currentTarget, this: this, d3Ptr: pointer(event)})
 	}
 
-	function handleMouseMove(event: Event, d: StackbarDatum) {
+	function handleMouseMove(this:any, event: Event, d: StackbarDatum) {
 		dispatcher.call('customMouseMove', event, d, 
 			{source: 'vizintel', d: d, event: event, evtCurrTgt: event.currentTarget, this: this, d3Ptr: pointer(event)})
 	}
 
-	function handleMouseOut(event: Event, d: StackbarDatum) {
+	function handleMouseOut(this:any, event: Event, d: StackbarDatum) {
 		dispatcher.call('customMouseOut', event, d, 
 			{source: 'vizintel', d: d, event: event, evtCurrTgt: event.currentTarget, this: this, d3Ptr: pointer(event)})
 	}
 
-	function handleMouseClick(event: Event, d: StackbarDatum) {
+	function handleMouseClick(this:any, event: Event, d: StackbarDatum) {
 		dispatcher.call('customMouseClick', event, d, 
 			{source: 'vizintel', d: d, event: event, evtCurrTgt: event.currentTarget, this: this, d3Ptr: pointer(event)})
 	}
@@ -395,7 +395,7 @@ export default function stackbar(): any {
   }
 
 	_.maxValue = function(_x: number) {
-    if (!arguments.length) { return getMaxValue(data ? data : null); }
+    if (!arguments.length) { return getMaxValue(data ? data : []); }
 
     // maxValue = getMaxValue(data ? data : _d) > _x ? getMaxValue(data ? data : _d) : _x
 
